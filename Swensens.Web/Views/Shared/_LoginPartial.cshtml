@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<AppUser> signInManager
+
+@* <ul class="navbar-nav flex-grow-2"> *@
+@if (signInManager.IsSignedIn(User))
+{
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color:#000" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            @User.Identity!.Name!
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+                <a class="dropdown-item" asp-controller="Account" asp-action="Logout">
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+    </li>
+
+
+
+}
+else
+{
+
+    <li class="nav-item">
+        <button style="position:relative;display:inline-block;font-weight:300;white-spacenowrap;text-align:center;background-image:none;cursor:pointer;padding:0 15px;border-radius:50px;background-color:#FFF;border: 1px solid #e21c23">
+            <a class="nav-link" style="color:#e21c23" asp-area="" asp-controller="Home" asp-action="Register">สมัครสมาชิก</a>
+        </button>
+    </li>
+    <li class="nav-item">
+        <button style="position:relative;display:inline-block;font-weight:300;white-spacenowrap;text-align:center;background-image:none;cursor:pointer;padding:0 15px;border-radius:50px;background-color:#e21c23;border: 1px solid #e21c23">
+            <a class="nav-link" style="color:#FFF" asp-area="" asp-controller="Home" asp-action="Login">เข้าสู่ระบบ</a>
+        </button>
+    </li>
+
+}

@@ -1,0 +1,106 @@
+﻿@using Swensens.Web.ViewModels
+@model RegisterVM;
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container-fluid">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="card my-5"
+             style="max-width:480px;margin:0 auto; border-radius:20px;overflow:hidden">
+            <div class="bg-danger" style="height:240px;width:480px;">
+                <img src="/Images/bglogin.png"
+                     style="display:flex;padding:0;margin:0" />
+            </div>
+            <form asp-action="Register" method="post" class="mt-5 px-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div>
+                    <div class="row">
+                        <div class="mb-1 col-6">
+                            <label style="color:#000;" asp-for="FirstName"></label>
+                            <input asp-for="FirstName" style="border-radius:10px;" class="form-control px-5" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-1 col-6 py-1">
+                            <label  style="color:#000;" asp-for="LastName"></label>
+                            <input asp-for="LastName" style="border-radius:10px;" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="mb-1 py-1">
+                        <label style="color:#000;"  asp-for="Phone"></label>
+                        <input asp-for="Phone" style="border-radius:10px;" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                    <div class="mb-1 py-1">
+                        <label style="color:#000;"  asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" style="border-radius:10px;" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-1 py-1">
+                        <label style="color:#000;"  asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" style="border-radius:10px;" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="mb-1 py-1">
+                        <label style="color:#000;"  asp-for="Gender"></label>
+                        <input asp-for="Gender" class="form-control" style="border-radius:10px;" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="mb-1 py-1">
+                        <label style="color:#000;"  asp-for="BirthDay"></label>
+                        <input type="date" asp-for="BirthDay" class="form-control" style="border-radius:10px;" />
+                        <span asp-validation-for="BirthDay" class="text-danger"></span>
+                    </div>
+
+                    <div class="m-3 gap-2">
+                        <div class="row">
+                            <input class="col-1" type="radio" id="" name="" value="" />
+                            <label class="col-11" for="">ฉันได้อ่านและยอมรับ <span style="color:#e21c23"><a>ข้อกำหนดการใช้งาน</a></span> และ <span style="color:#e21c23"><a>นโยบายความเป็นส่วนตัว</a></span> ของสเวนเซ่นส์</label><br>
+                        </div>
+                        <div class="row">
+                            <input class="col-1" type="radio" id="age2" name="age" value="60" />
+                            <label class="col-11" for="age2">ฉันยินยอมรับข้อมูลข่าวสาร กิจกรรมส่งเสริมการขายต่างๆ จากสเวนเซ่นส์และ<span style="color:#e21c23"><a>บริษัทในเครือ</a></span> โดยเราจะเก็บข้อมูลของท่านไว้เป็นความลับ สามารถศึกษาเงื่อนไขหรือข้อตกลง <span style="color:#e21c23"><a>นโยบายความเป็นส่วนตัว</a></span> เพิ่มเติมได้ที่เว็บไซต์ของบริษัทฯ</label><br>
+                        </div>
+                    </div>
+                    <input type="submit" value="สมัครสมาชิก" class="btn btn-danger m-4 py-3" style="width:400px;border-radius:30px" />
+                </div>
+                @*        <div class="p-2">
+                <a href="#" style="color:#e21c23; text-align:end;" class="bg-gradient">
+                ลืมรหัสผ่าน
+                </a>
+                </div>
+                <div class="btn btn-danger m-2" style="width:400px;border-radius:10px;">
+                Login
+                </div> *@
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
